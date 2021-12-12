@@ -1,0 +1,13 @@
+.card{
+    border-color: rgba(27, 27, 27, 1);
+}
+.card-body, .list-group-item{
+    background-color: #000;
+    color: rgb(110, 109, 109);
+}
+
+.card img{
+    border: none;
+    border-bottom: 1px solid rgba(255, 0, 43, 0.815);
+    height: max-content;
+}

@@ -1,0 +1,23 @@
+.search-results-container{
+    margin: 40px;
+    height: 500px;
+    overflow: auto;
+}
+
+.list-group-item {
+    color: #ffffff;
+    background-color: #4a4949;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.list-group a{
+    margin-bottom: 10px;
+}
+
+#loading{
+    color: white;
+}
+
+a{
+    cursor: pointer;
+}

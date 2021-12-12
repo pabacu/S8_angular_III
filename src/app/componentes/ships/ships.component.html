@@ -1,0 +1,28 @@
+<div *ngIf="isloading" class="d-flex justify-content-center">
+    <div class="spinner-border white" role="status">
+        <span class="sr-only" id="loading">Loading...</span>
+    </div>
+</div>
+
+<div class="container">
+    <div *ngIf="errorMsg" class="jumbotron p-4">
+        <div class="container text-center">
+            <div class="btn btn-warning m-1">{{errorMsg}}</div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    
+    <div class="search-results-container" infinite-scroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScrollDown($event)" [scrollWindow]="false" >
+        <div class="list-group mb-10">
+            <a *ngFor="let ship of ships" (click)="shipDetails(ship.url)" class="list-group-item list-group-item-action"
+                aria-current="true">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{ship.name}}</h5>
+                    <small></small>
+                </div>
+                <p class="mb-1">{{ship.model}}</p>
+                <small></small>
+            </a>
+        </div>
+    </div>
+</div>

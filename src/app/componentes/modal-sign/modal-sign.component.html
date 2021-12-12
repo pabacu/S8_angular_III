@@ -1,0 +1,74 @@
+<!-- The Modal Register -->
+<div class="modal seminor-login-modal" data-backdrop="static" id="signin">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal body -->
+            <div class="modal-body seminor-login-modal-body">
+                
+                <h5 class="modal-title text-center">CREATE AN ACCOUNT</h5>
+                <button type="button" class="close" data-dismiss="modal" (click)="close()">
+                    <span><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+                </button>
+                <div *ngIf="!formSubmitted" [ngClass]="'info'"> Form not submitted. </div>
+                <div *ngIf="loginform.invalid && !formSubmitted" [ngClass]="'error'"> Please, check name, email or password.</div>
+                <div *ngIf="formSubmitted && userExist" [ngClass]="'error'"> The email exists. </div><br />
+                <div *ngIf="formSubmitted && samePassword && !userExist" [ngClass]="'success'"> Form submitted successfully. </div><br />
+                <div *ngIf="formSubmitted && !samePassword" [ngClass]="'success'"> The password is not the same. </div><br />
+                <div *ngIf="formSubmitted && !register" [ngClass]="'success'"> An error has been occurred when register user. </div><br />
+
+               
+                <form *ngIf="register==false" [formGroup]="loginform" class="seminor-login-form" (submit)="onFormSubmit()">
+                    <div class="form-group">
+                        <input type="name" class="form-control" formControlName="name" required autocomplete="off">
+                        <label class="form-control-placeholder" for="name">User Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" formControlName="email" required autocomplete="off">
+                        <label class="form-control-placeholder" for="name">Email address</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" formControlName="password" required
+                            autocomplete="off">
+                        <label class="form-control-placeholder" for="password">Password</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" formControlName="confirmpassword" required
+                            autocomplete="off">
+                        <label class="form-control-placeholder" for="password">Confirm Password</label>
+                    </div>
+
+                    <div class="form-group forgot-pass-fau text-center ">
+                        <a href="#" class="text-secondary">
+                            By Clicking "SIGN UP" you accept our<br>
+                            <a href="https://disneytermsofuse.com/english/" target="_blank"><span
+                                    class="text-primary-fau">Terms and Conditions</span></a>
+                        </a>
+                    </div>
+
+                    <div class="btn-check-log">
+                        <button type="submit" name="submit" class="btn-check-login">SIGN UP</button>
+                    </div>
+                    <div class="create-new-fau text-center pt-3">
+                        <a href="login" class="text-primary-fau" id="login"><span data-toggle="modal"
+                                data-target="#sem-login" data-dismiss="modal">Already Have An Account</span></a>
+                    </div>
+                </form>
+
+                <div *ngIf="register==true">
+                    <p style="color:aliceblue">click on Login button </p>
+                    <div  class="btn-check-log">
+                        <a href="#" [routerLink]="['login/']" (click)="close()" class="btn-check-login" >LOGIN</a>
+                    </div>
+                    <br/>
+                    <p style="color:aliceblue">or you can close this popup</p>
+                    <div  class="btn-check-log">
+                        <button class="btn-check-login" (click)="close()">CLOSE</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

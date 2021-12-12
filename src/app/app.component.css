@@ -1,0 +1,35 @@
+nav.navbar{
+    border-bottom: 1px solid #646363;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.1em;
+}
+.navbar .navbar-nav .nav-link:hover{
+    color: #808080;
+}
+.navbar-logo-centered {
+    position: relative;
+    left: 48%;
+}
+
+.navbar-light .navbar-toggler {
+    color: rgb(255 255 255);
+    border-color: rgb(255 255 255);
+    background-color: white;
+}
+
+a.nav-link{
+    color:#808080;
+    border-left: 1px solid #333;
+}
+
+.last{
+    border-right: 1px solid #333;
+}
+
+a.nav-link:hover{
+    color:#fff;
+
+}

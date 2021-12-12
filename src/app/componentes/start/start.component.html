@@ -1,0 +1,64 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <figure class="figure">
+                <img src="https://place-hold.it/300x300?text=Not avaiable" class="figure-img img-fluid rounded"
+                    alt="...">
+                <figcaption class="figure-caption">Characters</figcaption>
+            </figure>
+
+        </div>
+        <div class="col">
+            <figure class="figure">
+                <img src="https://place-hold.it/300x300?text=Not avaiable" class="figure-img img-fluid rounded"
+                    alt="...">
+                <figcaption class="figure-caption">Films</figcaption>
+            </figure>
+
+        </div>
+        <div class="col">
+            <figure class="figure">
+                <div class="hovereffect">
+                    <img class="img-responsive" src="../../../assets/starships.png" alt="">
+                    <div class="overlay">
+                        <h2>Go to Starships</h2>
+                        <div *ngIf="registrado; else noregistrado">
+                            <a class="info" [routerLink]="['ships/']">STARSHIPS</a>
+                          </div>
+                        <ng-template #noregistrado>
+                            <a class="info" (click)="open('login')">Login</a>
+                        </ng-template>
+                    </div>
+                    <figcaption class="figure-caption">Startships</figcaption>
+                </div>
+            </figure>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <figure class="figure">
+                <img src="https://place-hold.it/300x300?text=Not avaiable" class="figure-img img-fluid rounded"
+                    alt="...">
+                <figcaption class="figure-caption">Vehicles</figcaption>
+            </figure>
+
+        </div>
+        <div class="col">
+            <figure class="figure">
+                <img src="https://place-hold.it/300x300?text=Not avaiable" class="figure-img img-fluid rounded"
+                    alt="...">
+                <figcaption class="figure-caption">Planets</figcaption>
+            </figure>
+
+        </div>
+        <div class="col">
+            <figure class="figure">
+                <img src="https://place-hold.it/300x300?text=Not avaiable" class="figure-img img-fluid rounded"
+                    alt="...">
+                <figcaption class="figure-caption">Species</figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
+
