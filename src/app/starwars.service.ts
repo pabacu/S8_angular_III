@@ -11,7 +11,7 @@ import { throwError } from 'rxjs';
 })
 export class StarwarsService {
 
-  public baseUrl = "https://swapi.dev/api/";
+  public baseUrl = "https://swapi.py4e.com/api/"; //"https://swapi.dev/api/";
   public ships = "starships/";
   public shipId = ""
   response: string ="";
