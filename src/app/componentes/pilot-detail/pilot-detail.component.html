@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="card mb-1" style="width: 90%;">
+        <img [src]="pilot_img"  onError="this.src='../../../assets/big-placeholder.jpg'" class="card-img-top center-block" alt="pilot" id="pilot" name="pilot"/>
+        <div class="card-body">
+            <h5 class="card-title">{{pilot.name}}</h5>
+            <p class="card-text">
+                PILOT PROPERTIES
+            </p>
+
+            <div class="row">
+                <div class="col-6">
+                    <ul class="list-group list-group-flush">
+                        <li *ngFor="let item of pilot | keyvalue let i = index" class="list-group-item"><span *ngIf="i%2 == 0"><b>{{item.key}}</b>:&nbsp;{{item.value}}</span></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="list-group list-group-flush">
+                        <li *ngFor="let item of pilot | keyvalue let i = index" class="list-group-item"><span *ngIf="i%2 != 0"><b>{{item.key}}</b>:&nbsp;{{item.value}}</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p class="card-text">
+            <small class="text-muted">Last updated {{pilot.edited}}</small>
+        </p>
+
+    </div>
+</div>
+

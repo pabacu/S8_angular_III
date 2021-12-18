@@ -89,6 +89,7 @@ export class ModalSignComponent implements OnInit {
 
 close():void{
   document.body.classList.remove('modalExperience');
+  document.body.classList.remove('modal');
   this.modalService.dismissAll();
 }
 

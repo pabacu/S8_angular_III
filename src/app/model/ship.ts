@@ -40,5 +40,8 @@ export class Ship {
     hyperdrive_rating!: string;
     MGLT!: string;
     starship_class!: string;
+    pilots!: string[];
+    created!:Date;
+    edited!:Date;
 
 }

@@ -14,13 +14,15 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { ModalSignComponent } from './componentes/modal-sign/modal-sign.component';
 import { ModalLoginComponent } from './componentes/modal-login/modal-login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PilotDetailComponent } from './componentes/pilot-detail/pilot-detail.component';
 
 
 
 const appRoutes:Routes=[
   {path:'', component: StartComponent,data: { animation: 'HomePage' } },
   {path:'ships', component: ShipsComponent,data: { animation: 'ShipPage' } },
-  {path:'shipDetail/:id', component: ShipDetailComponent, data: { animation: 'ShipDetailPage' } },
+  {path:'shipDetail/:id', component: ShipDetailComponent, data: { animation: 'DetailPage' } },
+  {path:'pilotDetail/:id', component: PilotDetailComponent, data: { animation: 'PilotDetailPage' } },
   {path:'login', component: ModalLoginComponent, data: { animation: 'Popup' } },
   {path:'signin', component: ModalSignComponent, data: { animation: 'Popup' } },
   
@@ -33,7 +35,8 @@ const appRoutes:Routes=[
     ShipsComponent,
     ShipDetailComponent,
     ModalSignComponent,
-    ModalLoginComponent
+    ModalLoginComponent,
+    PilotDetailComponent
   ],
   imports: [
     BrowserModule,

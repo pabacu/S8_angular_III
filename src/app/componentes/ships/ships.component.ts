@@ -31,8 +31,12 @@ export class ShipsComponent implements OnInit {
     {
       this.modalService.open(ModalLoginComponent).result.then((result) => {
         this.closeResult = `Closed with: ${result}`;
+        console.log("modal close " + this.closeResult);
       }, (reason) => {
         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        console.log("modal Dismissed");
+        if(this.loginService.getIsLogeado())
+          this.getdata();
       });
     }
   }

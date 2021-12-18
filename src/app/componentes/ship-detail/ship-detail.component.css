@@ -11,3 +11,7 @@
     border-bottom: 1px solid rgba(255, 0, 43, 0.815);
     height: max-content;
 }
+
+a{
+    cursor: pointer;
+}

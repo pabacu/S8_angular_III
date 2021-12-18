@@ -1,6 +1,7 @@
 <div class="container">
     <div class="card mb-1" style="width: 90%;">
-        <img [src]="ship_img"  onError="this.src='../../../assets/big-placeholder.jpg'" class="card-img-top" alt="ship" id="ship" name="ship"/>
+        <img [src]="ship_img" onError="this.src='../../../assets/big-placeholder.jpg'" class="card-img-top" alt="ship"
+            id="ship" name="ship" />
         <div class="card-body">
             <h5 class="card-title">{{ship.name}}</h5>
             <p class="card-text">
@@ -10,19 +11,48 @@
             <div class="row">
                 <div class="col-6">
                     <ul class="list-group list-group-flush">
-                        <li *ngFor="let item of ship | keyvalue let i = index" class="list-group-item"><span *ngIf="i%2 == 0"><b>{{item.key}}</b>:&nbsp;{{item.value}}</span></li>
+                        <li *ngFor="let item of ship | keyvalue let i = index" class="list-group-item"><span
+                                *ngIf="i%2 == 0 && item.key.toString()!='edited'"><b>{{item.key}}</b>:&nbsp;{{item.value}}</span>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-6">
                     <ul class="list-group list-group-flush">
-                        <li *ngFor="let item of ship | keyvalue let i = index" class="list-group-item"><span *ngIf="i%2 != 0"><b>{{item.key}}</b>:&nbsp;{{item.value}}</span></li>
+                        <li *ngFor="let item of ship | keyvalue let i = index" class="list-group-item"><span
+                                *ngIf="i%2 != 0 && item.key.toString()!='pilots'"><b>{{item.key}}</b>:&nbsp;{{item.value}}</span>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
         <p class="card-text">
-            <small class="text-muted">Last updated 3 mins ago</small>
+            <small class="text-muted">Last updated {{ship.edited}} ago</small>
         </p>
 
+    </div>
+    <div class="card mb-1" style="width: 90%;">
+        <div class="card-body">
+            <h5 class="card-title">PILOTS</h5>
+            <div *ngIf="ship.pilots != undefined && ship.pilots.length == 0; else showPilots">
+                <p class="card-text">
+                    NO PILOTS AVAILABLES
+                </p>
+            </div>
+            <ng-template #showPilots>
+                <div class="row">
+                    <div class="col-12">
+                        <a *ngFor="let pilot of extraPilots" (click)="pilotDetails(pilot.url)"
+                            class="list-group-item list-group-item-action" aria-current="true">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">{{pilot.name}}</h5>
+                                <small></small>
+                            </div>
+                            <p class="mb-1">{{pilot.gender}} - {{pilot.birth_year}}</p>
+                            <small></small>
+                        </a>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
     </div>
 </div>
