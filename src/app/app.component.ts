@@ -49,6 +49,7 @@ export class AppComponent {
 
   logout():void{
     this.loginservice.logout();
+    this.registrado = false;
   }
 
   open(_name: string) {

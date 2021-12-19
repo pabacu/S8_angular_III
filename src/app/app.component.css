@@ -33,3 +33,8 @@ a.nav-link:hover{
     color:#fff;
 
 }
+
+.nav-link.active{
+    color: yellow;
+    border-bottom: 1px solid;
+}
